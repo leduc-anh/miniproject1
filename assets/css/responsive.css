@@ -1,0 +1,45 @@
+/* moblie */
+@media (max-width: 740px) {
+    #nap {
+        display: block;
+    }
+    #nap > li{
+        display: block;
+    }
+    #nap > li:first-child {
+        display: inline-block;
+    }
+    #nap .subnap {
+        position: initial;
+        background-color: #333;
+    }
+    #nap .subnap a{
+        color: #fff ;
+        padding: 5px 41px;
+    }
+    #nap li a{
+        padding: 1px 24px;
+    }
+    #header {
+        overflow: hidden;
+    }
+    #header .mobile-menu{
+       
+        display: block;
+    }
+    #header .search-icon{
+        display: none;
+    }
+    #content .member-item {
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+    #content .member-img {
+        margin-top: 5px;
+    }
+    #content .member-name {
+        margin-top: 20px;
+    }
+  
+}

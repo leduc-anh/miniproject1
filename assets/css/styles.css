@@ -58,10 +58,12 @@ html {
     height: 46.5px;
     background-color: black;
     z-index: 1;
+    
 }   
 #nap > li{
     display: inline-block;
 }
+
 
 #nap li {
     
@@ -86,14 +88,30 @@ html {
     font-size: 12px;
 
 }
+#header .mobile-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+#header .mobile-menu,
 #header .search-btn{
 float: right;
 padding: 0 21px;
 }
+#header .mobile-menu:hover {
+    
+    background-color: #ccc;
+}
+#header .mobile-menu:hover .menu-icon{
+    color: #000;
+}
+
 #header .search-btn:hover{
     cursor: pointer;
-        background-color: #f44336;
+    background-color: #f44336;
 }
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
     font-size: 20px;
@@ -140,14 +158,18 @@ position: relative;
     font-size: 15px;
     font-weight: 800;
     margin-top: 20px;
+    text-shadow: 0 0 1px #000;
 }
 
 
 #content .content-heading{
     width: 800px;
+    max-width: 100%;
     padding: 64px 0;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 #content .section-heading, .section-sub-heading {
     text-align: center;

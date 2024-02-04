@@ -19,8 +19,9 @@ IV hoàn thiện -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Band</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fronts/themify-icons.css">
 </head>
 <body>
@@ -32,14 +33,14 @@ IV hoàn thiện -->
                 <li><a href="#band">Band</a></li>
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="">
+                <li><a href="#  ">
                     More
                     <i class="nav-arrow-down ti-angle-down"></i>
                 </a>
                     <ul class="subnap">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>    
                 </li>
             </ul>
@@ -47,6 +48,9 @@ IV hoàn thiện -->
             <!-- Begin seach -->
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
+            </div>
+            <div id="mobile-menu-btn" class="mobile-menu">
+                <i class="menu-icon ti-menu"></i>
             </div>
         </div>
         <div id="slider">
@@ -207,6 +211,7 @@ IV hoàn thiện -->
             </footer>
         </div>
     </div>
+    <!-- buyticket -->
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-ticket')
         const modal = document.querySelector('.js-modal')
@@ -228,5 +233,34 @@ IV hoàn thiện -->
             even.stopPropagation()
         })
     </script>
+    
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu-btn');
+        var headerHeight = header.clientHeight;
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+        // tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('#nap li a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnap');
+                if (!isParentMenu) {
+                header.style.height = null;
+            } else {
+                    event.preventDefault();
+            }
+        }
+        }
+
+        </script>
 </body>
 </html>
